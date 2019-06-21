@@ -22,7 +22,7 @@
 sudo pip install -U docker-compose
 ```
 
-### 2.下载 zPhal-dockerfiles
+### 2.下载 dockerfiles
 直接 clone：
 ```
 git clone https://github.com/xiaobingge/docker.git
