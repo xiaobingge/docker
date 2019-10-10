@@ -53,11 +53,11 @@ services:
   redis-db:
       build: ./redis
       ports:
-        - "6379:6379":
+        - "6379:6379"
       volumes:
         - ../data/redis:/data
       restart: always
-   jenkins:
+  jenkins:
       image: jenkins/jenkins:lts
       volumes:
         - ../data/jenkins:/var/jenkins_home
