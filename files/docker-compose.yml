@@ -43,10 +43,10 @@ services:
         - ../logs/mysql:/var/lib/mysql-logs:rw
         - ./mysql/conf.d:/etc/mysql/conf.d:ro
       environment:
-        MYSQL_ROOT_PASSWORD: 123456
+        MYSQL_ROOT_PASSWORD: xiaobinggev5
         MYSQL_DATABASE: dbger
         MYSQL_USER: dbger
-        MYSQL_PASSWORD: 123456
+        MYSQL_PASSWORD: xiaobinggev5
       restart: always
       command: "--character-set-server=utf8"
 
@@ -56,23 +56,4 @@ services:
         - "6379:6379"
       volumes:
         - ../data/redis:/data
-      restart: always
-  jenkins:
-      image: jenkins/jenkins:lts
-      volumes:
-        - ../data/jenkins:/var/jenkins_home
-        - /var/run/docker.sock:/var/run/docker.sock
-        - /usr/bin/docker:/usr/bin/docker
-        - /usr/lib/x86_64-linux-gnu/libltdl.so.7:/usr/lib/x86_64-linux-gnu/libltdl.so.7
-      ports:
-        - "8080:8080"
-      expose:
-        - "8080"
-        - "50000"
-      privileged: true
-      user: root
-      restart: always
-      container_name: jenkins
-      environment:
-        JAVA_OPTS: '-Djava.util.logging.config.file=/var/jenkins_home/log.properties'
-    
+      restart: always    
